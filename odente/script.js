@@ -1,11 +1,11 @@
 const images = [
   "pag1.jpeg",
   "pag2.jpeg",
-  "pagina3.jpg",
-  "pagina4.jpg",
-  "pagina5.jpg",
-  "pagina6.jpg",
-  "pagina7.jpg"
+  "pag3.jpeg",
+  "pag4.jpeg",
+  "pag5.jpeg",
+  "pag6.jpeg",
+  "pag7.jpeg"
 ];
 
 let currentIndex = 0;

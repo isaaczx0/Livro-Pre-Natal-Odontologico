@@ -19,6 +19,14 @@ body {
   justify-content: center;
   gap: 20px;
 }
+.container img{
+  margin-left: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
 
 #bookPage {
   width: 595px;
