@@ -1,3 +1,4 @@
+/*Antonio*/
 const images = [
   "pag1.jpeg",
   "pag2.jpeg",
