@@ -1,0 +1,111 @@
+/*central html*/
+
+.titulo {
+    text-align: center;         /*centralizar texto*/
+}
+
+.central {
+    padding-top: 10%;       /*jogar texto para baixo*/
+    text-align: center;
+}
+
+.link-borda {
+    display: inline-block;      /*deixar o link/palavra como um botão*/
+    padding: 10px 20px;      /*espaço na palavra e o botão, primeiro baixo e cima, segundo dos lados*/
+    border: 2px solid plum; /*solid gera o contorno, uma cor mais aparente*/
+    border-radius: 5px;
+    text-decoration: none;      /*remover sublinhado do link aenxado*/
+    color: solid palevioletred;     /*cor da escrita(link)*/
+    font-weight: bold;      /*bold deixa o texto em negrito, mais destaque*/
+}
+
+.link-borda:hover {
+    background-color: pink;         /*cor da sombra criada ao passar o mouse no botão*/
+    color: white;
+    /*hover significa quando se passa o mouse sobre*/
+}
+
+
+/*formulario*/
+
+.formulario {
+    width: 350px; /*tamanho do padding, caixa de texto*/
+    margin: 40px auto; /*centralizar o padding*/
+    padding: 20px; /*margem lateral*/
+    border: 2px solid pink;
+    border-radius: 10px;
+    background-color: #fff0f5; /* leve tom rosa claro de fundo (opcional) */
+}
+
+.formulario label {
+    display: block;     /*um campo por linha*/
+    margin-bottom: 5px;         /*espaço entre cada campo a ser preenchido*/
+    color: #d63384;         /*cor da escrita de cada informativo do campo*/
+    font-weight: bold;
+}
+
+.formulario input {
+    width: 100%;        /*tamanho do campo para ser preenchido*/
+    padding: 10px;      /*espaço entre a escrita e o campo*/
+    border: 2px solid #ff69b4; 
+    border-radius: 5px;
+    margin-bottom: 15px;        /*espaço entre cada campo a ser preenchido*/
+    box-sizing: border-box;     /*controlar o tamanho dos campo dentro do padding*/
+}
+
+.link-borda {
+    padding: 10px 20px;
+    background-color: #ff69b4;
+    color: white;
+    border: none;       /*evita qualquer borda de outro navegador*/
+    border-radius: 5px;
+    cursor: pointer; /*muda o cursor para a mão quando aparece o botão, para parecer uma oportunidade de click*/
+    font-weight: bold;
+}
+
+.link-borda:hover {
+    background-color: #d63384;
+}
+
+/*login*/
+
+.formulario {
+    width: 300px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 2px solid pink;
+    border-radius: 10px;
+    background-color: #fff0f5; 
+}
+
+.formulario label {
+    display: block;
+    margin-bottom: 5px;
+    color: #d63384; /* rosa escuro */
+    font-weight: bold;
+}
+
+.formulario input {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #ff69b4; /* borda rosa viva */
+    border-radius: 5px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+}
+
+.link-borda {
+    padding: 10px 20px;
+    background-color: #ff69b4; 
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.link-borda:hover {
+    background-color: #d63384; 
+}
+
+
