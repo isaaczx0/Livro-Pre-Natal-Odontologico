@@ -108,4 +108,17 @@
     background-color: #d63384; 
 }
 
+#cabecalho{
+    color: #ff69b4;
+    font-weight: bold;
+    font-family: fantasy;
+}
 
+#alternador{
+    display: inline-block;
+    background-color: #ff69b4;
+    padding: 8px;
+    border-radius: 5px;
+    font-family: fantasy;
+    text-decoration: none;
+}
