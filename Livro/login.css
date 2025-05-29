@@ -34,7 +34,7 @@
     padding: 20px; /*margem lateral*/
     border: 2px solid pink;
     border-radius: 10px;
-    background-color: #fff0f5; /* leve tom rosa claro de fundo (opcional) */
+    background-color: pink; /* leve tom rosa claro de fundo */
 }
 
 .formulario label {
@@ -121,4 +121,8 @@
     border-radius: 5px;
     font-family: fantasy;
     text-decoration: none;
+}
+
+.fundo{
+    background-color: lightpink;
 }
