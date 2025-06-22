@@ -1,128 +1,120 @@
-/*central html*/
-
-.titulo {
-    text-align: center;         /*centralizar texto*/
-}
-
-.central {
-    padding-top: 10%;       /*jogar texto para baixo*/
-    text-align: center;
-}
-
-.link-borda {
-    display: inline-block;      /*deixar o link/palavra como um botão*/
-    padding: 10px 20px;      /*espaço na palavra e o botão, primeiro baixo e cima, segundo dos lados*/
-    border: 2px solid plum; /*solid gera o contorno, uma cor mais aparente*/
-    border-radius: 5px;
-    text-decoration: none;      /*remover sublinhado do link aenxado*/
-    color: solid palevioletred;     /*cor da escrita(link)*/
-    font-weight: bold;      /*bold deixa o texto em negrito, mais destaque*/
-}
-
-.link-borda:hover {
-    background-color: pink;         /*cor da sombra criada ao passar o mouse no botão*/
-    color: white;
-    /*hover significa quando se passa o mouse sobre*/
-}
-
-
-/*formulario*/
-
-.formulario {
-    width: 350px; /*tamanho do padding, caixa de texto*/
-    margin: 40px auto; /*centralizar o padding*/
-    padding: 20px; /*margem lateral*/
-    border: 2px solid pink;
-    border-radius: 10px;
-    background-color: pink; /* leve tom rosa claro de fundo */
-}
-
-.formulario label {
-    display: block;     /*um campo por linha*/
-    margin-bottom: 5px;         /*espaço entre cada campo a ser preenchido*/
-    color: #d63384;         /*cor da escrita de cada informativo do campo*/
-    font-weight: bold;
-}
-
-.formulario input {
-    width: 100%;        /*tamanho do campo para ser preenchido*/
-    padding: 10px;      /*espaço entre a escrita e o campo*/
-    border: 2px solid #ff69b4; 
-    border-radius: 5px;
-    margin-bottom: 15px;        /*espaço entre cada campo a ser preenchido*/
-    box-sizing: border-box;     /*controlar o tamanho dos campo dentro do padding*/
-}
-
-.link-borda {
-    padding: 10px 20px;
-    background-color: #ff69b4;
-    color: white;
-    border: none;       /*evita qualquer borda de outro navegador*/
-    border-radius: 5px;
-    cursor: pointer; /*muda o cursor para a mão quando aparece o botão, para parecer uma oportunidade de click*/
-    font-weight: bold;
-}
-
-.link-borda:hover {
-    background-color: #d63384;
-}
-
-/*login*/
-
-.formulario {
-    width: 300px;
-    margin: 50px auto;
-    padding: 20px;
-    border: 2px solid pink;
-    border-radius: 10px;
-    background-color: #fff0f5; 
-}
-
-.formulario label {
-    display: block;
-    margin-bottom: 5px;
-    color: #d63384; /* rosa escuro */
-    font-weight: bold;
-}
-
-.formulario input {
-    width: 100%;
-    padding: 10px;
-    border: 2px solid #ff69b4; /* borda rosa viva */
-    border-radius: 5px;
-    margin-bottom: 15px;
+* {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
-.link-borda {
-    padding: 10px 20px;
-    background-color: #ff69b4; 
-    color: white;
+body {
+    background-color: #fdeff4;
+    font-family: sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Evita barras de rolagem indesejadas */
+}
+
+/* Estilo para o contêiner principal do livro */
+.book {
+    position: relative;
+    width: 600px; /* Largura de uma página dupla (ex: 2 * 300px por página) */
+    height: 850px; /* Altura da página */
+    transition: transform 0.5s ease; /* Transição para abrir/fechar o livro */
+    transform-style: preserve-3d; /* Permite transformações 3D em elementos filhos */
+}
+
+/* Estilo para cada "folha" do livro */
+.paper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transform-origin: left; /* Ponto de rotação da página */
+    transition: transform 0.5s ease; /* Transição para virar a página */
+    transform-style: preserve-3d;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo para a frente e o verso de cada folha */
+.front, .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: white;
+    backface-visibility: hidden; /* Esconde o lado oposto da rotação */
+    overflow: hidden;
+}
+
+.front {
+    z-index: 1;
+}
+
+.back {
+    transform: rotateY(180deg); /* O verso começa rotacionado para trás */
+    z-index: 0;
+}
+
+/* Estilo para o conteúdo dentro da frente/verso */
+.front-content, .back-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilo para as imagens dentro das páginas */
+.front-content img, .back-content img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* ou 'cover' */
+}
+
+/* Classe 'flipped' adicionada via JS para virar a página */
+.flipped {
+    transform: rotateY(-180deg); /* Vira a página 180 graus */
+}
+
+/* Z-index inicial para as páginas (maior na frente, menor atrás) */
+/* Isso é crucial para a ordem das páginas */
+#p1 { z-index: 4; } /* Capa */
+#p2 { z-index: 3; }
+#p3 { z-index: 2; }
+#p4 { z-index: 1; } /* Última página/Contracapa */
+
+
+/* Estilos para os botões de navegação */
+.nav-button {
+    background-color: #ffb6c1;
     border: none;
-    border-radius: 5px;
+    padding: 15px 25px;
+    font-size: 32px;
     cursor: pointer;
-    font-weight: bold;
+    border-radius: 50%;
+    transition: background-color 0.3s, transform 0.3s, opacity 0.3s, visibility 0.3s; /* Adicionei opacity e visibility para o JS */
+    color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%); /* Centraliza verticalmente */
+    z-index: 10; /* Para garantir que fiquem acima do livro */
 }
 
-.link-borda:hover {
-    background-color: #d63384; 
+#prev-btn {
+    left: calc(50% - 350px); /* Ajuste a distância do livro */
 }
 
-#cabecalho{
-    color: #ff69b4;
-    font-weight: bold;
-    font-family: fantasy;
+#next-btn {
+    right: calc(50% - 350px); /* Ajuste a distância do livro */
 }
 
-#alternador{
-    display: inline-block;
-    background-color: #ff69b4;
-    padding: 8px;
-    border-radius: 5px;
-    font-family: fantasy;
-    text-decoration: none;
-}
-
-.fundo{
-    background-color: lightpink;
+/* Classes para esconder/mostrar botões via JS */
+.nav-button.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none; /* Desativa cliques quando invisível */
 }
