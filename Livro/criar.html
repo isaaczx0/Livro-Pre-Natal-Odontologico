@@ -4,42 +4,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <div id="alternador">
-        <a href="central.html" style="text-decoration: none;">Central Login</a>
-    </div>
-    <title>Login</title>
+    <title>Criar Conta</title>
     <link rel="stylesheet" href="login.css">
-    <div id="cabecalho">
-        <h2 style="margin-top: -10px; text-align: center;">CRIAR CONTA</h2>
-    </div>
+    
 </head>
 
-<body style="background-color: #fdeff4;">
-        <div class="formulario">
-            <form>
-                <label for="nome">Nome:</label>
-                <input type="text">
-                <br><br>
+<body>
 
-                <label for="Data">Data de Nascimento:</label>
-                <input type="date">
-                <br><br>
+    <div id="alternador">
+        <a href="central.html" style="text-decoration: none; color: #d63384; font-weight: bold;">Voltar à Central de Login</a>
+    </div>
 
-                <label for="telefone">Telefone</label>
-                <input type="number" placeholder="(XX)XXXXX-XXXX">
-                <br><br>
+    <div id="cabecalho">
+        <h2>CRIAR CONTA</h2>
+    </div>
 
-                <label for="usuario">Usuário:</label>
-                <input type="text">
-                <br><br>
+    <div class="formulario">
+        <form>
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required>
+            <br><br>
 
-                <label for="senha">Senha:</label>
-                <input type="password">
-                <br><br>
+            <label for="data">Data de Nascimento:</label>
+            <input type="date" id="data" name="data" required>
+            <br><br>
 
-                <button type="submit" class="link-borda">Enviar</button>
-            </form>
-        </div>
+            <label for="telefone">Telefone:</label>
+            <input type="tel" id="telefone" name="telefone" placeholder="(XX)XXXXX-XXXX" required>
+            <br><br>
+
+            <label for="usuario">Usuário:</label>
+            <input type="text" id="usuario" name="usuario" required>
+            <br><br>
+
+            <label for="senha">Senha:</label>
+            <input type="password" id="senha" name="senha" required>
+            <br><br>
+
+            <button type="submit" class="link-borda">Enviar</button>
+        </form>
+    </div>
+
 </body>
 
 </html>

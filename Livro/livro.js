@@ -1,5 +1,5 @@
-/*Antonio*/
-// Referências a DOM Elements
+
+// Referências dos doc
 const prevBtn = document.querySelector("#prev-btn");
 const nextBtn = document.querySelector("#next-btn");
 const book = document.querySelector("#book");
@@ -9,7 +9,7 @@ const paper2 = document.querySelector("#p2");
 const paper3 = document.querySelector("#p3");
 const paper4 = document.querySelector("#p4"); // Adicionado paper4
 
-// Event Listener
+// botoes de go e back pag
 prevBtn.addEventListener("click", goPrevPage);
 nextBtn.addEventListener("click", goNextPage);
 
@@ -22,7 +22,7 @@ nextBtn.addEventListener("click", goNextPage);
 // 5 = livro fechado na contracapa (chegou ao fim)
 let currentLocation = 1;
 const numOfPapers = 4; // Há 4 div.paper no HTML
-const maxLocation = numOfPapers + 1; // Máximo de 5 "localizações" (1 fechado + 4 abertos)
+const maxLocation = numOfPapers + 1; // Máximo de 5 "Paginas" (1 fechado + 4 abertos)
 
 function openBook() {
     book.style.transform = "translateX(50%)"; // Move o livro para a direita para centralizar quando aberto
