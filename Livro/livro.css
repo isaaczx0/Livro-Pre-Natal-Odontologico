@@ -11,105 +11,95 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden; /* Evita barras de rolagem indesejadas */
+    overflow: hidden; 
 }
 
-/* Estilo para o contêiner principal do livro */
 .book {
-    position: relative; /* Para posicionar as páginas (paper) */
-    width: 600px; /* Largura total do livro (ex: 2 * 300px por página) */
-    height: 850px; /* Altura da página */
-    transition: transform 0.5s; /* Transição para abrir/fechar o livro */
-    transform-style: preserve-3d; /* Permite transformações 3D em elementos filhos */
+    position: relative;
+    width: 600px; 
+    height: 850px; 
+    transition: transform 0.5s; 
+    transform-style: preserve-3d;
 }
 
-/* Estilo para cada "folha" do livro */
 .paper {
     position: absolute;
     width: 100%;
     height: 100%;
     top: 0;
     left: 0;
-    transform-origin: left; /* Ponto de rotação da página */
-    transition: transform 0.5s; /* Transição para virar a página */
-    transform-style: preserve-3d; /* Permite rotação dos lados (front/back) */
-    border: 1px solid #ccc; /* Borda sutil para separar as páginas */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra para profundidade */
+    transform-origin: left; 
+    transition: transform 0.5s;
+    transform-style: preserve-3d;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Estilo para a frente e o verso de cada folha */
 .front, .back {
     position: absolute;
     width: 100%;
     height: 100%;
     top: 0;
     left: 0;
-    background-color: white; /* Fundo branco para as páginas */
-    backface-visibility: hidden; /* Esconde o lado oposto da rotação */
-    overflow: hidden; /* Para garantir que a imagem não vaze */
+    background-color: white;
+    backface-visibility: hidden;
+    overflow: hidden;
 }
 
 .front {
-    z-index: 1; /* A frente deve estar na frente normalmente */
+    z-index: 1;
 }
 
 .back {
-    transform: rotateY(180deg); /* O verso começa rotacionado para trás */
-    z-index: 0; /* O verso deve estar atrás normalmente */
+    transform: rotateY(180deg);
+    z-index: 0;
 }
 
-/* Estilo para o conteúdo dentro da frente/verso */
 .front-content, .back-content {
     width: 100%;
     height: 100%;
-    display: flex; /* Para centralizar o conteúdo, se necessário */
+    display: flex;
     justify-content: center;
     align-items: center;
 }
 
-/* Estilo para as imagens dentro das páginas */
 .front-content img, .back-content img {
-    width: 100%; /* A imagem preenche a largura da div de conteúdo */
-    height: 100%; /* A imagem preenche a altura da div de conteúdo */
-    object-fit: contain; /* Ou 'cover' dependendo como você quer que a imagem se ajuste */
-    /* contain: a imagem inteira é visível, pode ter bordas brancas
-       cover: a imagem preenche o espaço, pode cortar partes */
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
-/* Classe 'flipped' adicionada via JS para virar a página */
 .flipped {
-    transform: rotateY(-180deg); /* Vira a página 180 graus */
+    transform: rotateY(-180deg);
 }
 
-/* Z-index para a ordem das páginas viradas (controlado pelo JS) */
-#p1 { z-index: 4; } /* Começa com a maior z-index */
+#p1 { z-index: 4; }
 #p2 { z-index: 3; }
 #p3 { z-index: 2; }
-#p4 { z-index: 1; } /* Última página, menor z-index */
+#p4 { z-index: 1; }
 
-/* Estilos para os botões de navegação */
 .nav-button {
     background-color: #ffb6c1;
     border: none;
-    padding: 15px 25px; /* Aumentei o padding para serem maiores */
-    font-size: 32px; /* Ícone maior */
+    padding: 15px 25px;
+    font-size: 32px;
     cursor: pointer;
-    border-radius: 50%; /* Botões redondos */
+    border-radius: 50%;
     transition: background-color 0.3s, transform 0.3s;
-    color: white; /* Cor do ícone */
+    color: white;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    position: absolute; /* Para posicioná-los ao lado do livro */
+    position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    z-index: 10; /* Para garantir que fiquem acima do livro */
+    z-index: 10;
 }
 
 #prev-btn {
-    left: calc(50% - 350px); /* Ajuste a distância do livro */
+    left: calc(50% - 350px);
 }
 
 #next-btn {
-    right: calc(50% - 350px); /* Ajuste a distância do livro */
+    right: calc(50% - 350px);
 }
 
 .nav-button:hover {
